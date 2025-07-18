@@ -1,0 +1,19 @@
+name: Sync to Gitee
+on: [push]  # Triggers on every push to GitHub
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+
+      - name: Mirror to Gitee
+        run: |
+          git config --global user.name "happiness---hkibsadman"
+          git config --global user.email "sadmanshkib@gmail.com"
+          git remote add gitee https://gitee.com/${{ secrets.GITEE_USER }}/${{ github.event.repository.name }}.git
+          git push gitee HEAD:main --force
+        env:
+          GITEE_USER: happiness---hkibsadman  # Replace with your Gitee username
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
