@@ -10,8 +10,8 @@ jobs:
 
       - name: Mirror to Gitee
         run: |
-          git config --global user.name "happiness---hkibsadman"
-          git config --global user.email "sadmanshkib@gmail.com"
+          git config --global user.name "幸福-SHKIBSADMAN"
+          git config --global user.email "15917537+happiness---hkibsadman@user.noreply.gitee.com"
           git remote add gitee https://gitee.com/${{ secrets.GITEE_USER }}/${{ github.event.repository.name }}.git
           git push gitee HEAD:main --force
         env:
