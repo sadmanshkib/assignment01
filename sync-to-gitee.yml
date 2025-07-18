@@ -15,5 +15,5 @@ jobs:
           git remote add gitee https://gitee.com/${{ secrets.GITEE_USER }}/${{ github.event.repository.name }}.git
           git push gitee HEAD:main --force
         env:
-          GITEE_USER: happiness---hkibsadman  # Replace with your Gitee username
-          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_USER: happiness---hkibsadman 
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}    
